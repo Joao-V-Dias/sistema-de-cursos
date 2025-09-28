@@ -1,0 +1,15 @@
+CREATE TABLE curso (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT
+);
+
+CREATE TABLE aluno (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+	cpf VARCHAR(14) UNIQUE NOT NULL,
+	ra VARCHAR(14) UNIQUE NOT NULL,
+    curso_id INT,
+    FOREIGN KEY (curso_id) REFERENCES curso(id) ON DELETE CASCADE
+);
