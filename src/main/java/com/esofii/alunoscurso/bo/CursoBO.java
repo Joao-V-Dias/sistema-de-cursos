@@ -12,25 +12,29 @@ import java.util.List;
  *
  * @author JoaoDias
  */
-public class CursoBO {
+public class CursoBO implements iBO<Curso>{
     private CursoDAO cDAO;
 
     public CursoBO() {
         cDAO = new CursoDAO();
     }
 
+    @Override
     public Curso salvar(Curso c) {
         return cDAO.salvar(c);
     }
 
+    @Override
     public List<Curso> listarTodos() {
         return cDAO.selecionarTodos();
     }
 
+    @Override
     public Curso buscarPorId(int id) {
         return cDAO.selecionarPorId(id);
     }
 
+    @Override
     public boolean excluir(int id) {
         return cDAO.excluir(id);
     }

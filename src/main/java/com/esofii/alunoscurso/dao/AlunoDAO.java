@@ -11,13 +11,14 @@ import java.util.List;
  *
  * @author JoaoDias
  */
-public class AlunoDAO {
+public class AlunoDAO implements iDAO<Aluno>{
     private Connection conn;
 
     public AlunoDAO() {
         conn = new Conexao().conectar();
     }
 
+    @Override
     public Aluno salvar(Aluno a) {
         try {
             PreparedStatement stmt = conn.prepareStatement(
@@ -45,6 +46,7 @@ public class AlunoDAO {
         }
     }
 
+    @Override
     public List<Aluno> selecionarTodos() {
         List<Aluno> alunos = new ArrayList<>();
         try {
@@ -67,6 +69,7 @@ public class AlunoDAO {
     }
 
 
+    @Override
     public Aluno selecionarPorId(int id) {
         try {
             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM aluno WHERE id = ?");
@@ -87,6 +90,7 @@ public class AlunoDAO {
         }
     }
 
+    @Override
     public boolean excluir(int id) {
         try {
             PreparedStatement stmt = conn.prepareStatement("DELETE FROM aluno WHERE id = ?");
@@ -117,5 +121,4 @@ public class AlunoDAO {
         }
         return a;
     }
-
 }

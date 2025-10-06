@@ -12,27 +12,31 @@ import java.util.List;
  *
  * @author JoaoDias
  */
-public class AlunoBO {
+public class AlunoBO implements iBO<Aluno> {
     private AlunoDAO aDAO;
 
     public AlunoBO() {
         aDAO = new AlunoDAO();
     }
 
+    @Override
     public Aluno salvar(Aluno a) {
         String raGerado = a.getCpf().replaceAll("[^0-9]", "");
         a.setRa(raGerado);
         return aDAO.salvar(a);
     }
 
+    @Override
     public List<Aluno> listarTodos() {
         return aDAO.selecionarTodos();
     }
 
+    @Override
     public Aluno buscarPorId(int id) {
         return aDAO.selecionarPorId(id);
     }
 
+    @Override
     public boolean excluir(int id) {
         return aDAO.excluir(id);
     }

@@ -1,0 +1,13 @@
+com\esofii\alunoscurso\dao\CursoDAO.class
+com\esofii\alunoscurso\entity\Aluno.class
+com\esofii\alunoscurso\bo\CursoBO.class
+com\esofii\alunoscurso\form\AlunoInterface.class
+com\esofii\alunoscurso\util\Conexao.class
+com\esofii\alunoscurso\dao\AlunoDAO.class
+com\esofii\alunoscurso\entity\Curso.class
+com\esofii\alunoscurso\AlunosCurso.class
+com\esofii\alunoscurso\form\CursoInterface.class
+com\esofii\alunoscurso\bo\iBO.class
+com\esofii\alunoscurso\dao\iDAO.class
+com\esofii\alunoscurso\form\MenuInterface.class
+com\esofii\alunoscurso\bo\AlunoBO.class
